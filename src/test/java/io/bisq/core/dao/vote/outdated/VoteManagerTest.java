@@ -15,7 +15,7 @@
  * along with Bisq. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package io.bisq.core.dao.vote;
+package io.bisq.core.dao.vote.outdated;
 
 import io.bisq.common.app.Version;
 import org.junit.Ignore;
@@ -151,7 +151,7 @@ public class VoteManagerTest {
             assertThat(e.getMessage(), startsWith(VotingDefaultValues.ERROR_MSG_INVALID_VALUE));
         }
 
-        // Valid param vote 
+        // Valid param vote
         opReturnData = new byte[24];
         opReturnData[0] = Version.VOTING_VERSION;
         opReturnData[21] = (byte) 0;
@@ -183,4 +183,4 @@ public class VoteManagerTest {
         // assertEquals(10, votingManager.calculateHash(100, 0));
     }
 
-} 
+}

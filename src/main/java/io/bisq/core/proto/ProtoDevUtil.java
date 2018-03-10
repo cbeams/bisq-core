@@ -19,7 +19,7 @@ package io.bisq.core.proto;
 
 import io.bisq.core.arbitration.DisputeResult;
 import io.bisq.core.btc.AddressEntry;
-import io.bisq.core.dao.vote.VotingType;
+import io.bisq.core.dao.vote.outdated.VotingType;
 import io.bisq.core.offer.AvailabilityResult;
 import io.bisq.core.offer.Offer;
 import io.bisq.core.offer.OfferPayload;

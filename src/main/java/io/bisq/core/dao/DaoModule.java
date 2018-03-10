@@ -34,9 +34,9 @@ import io.bisq.core.dao.node.lite.LiteNodeExecutor;
 import io.bisq.core.dao.node.lite.LiteNodeParser;
 import io.bisq.core.dao.node.lite.network.LiteNodeNetworkManager;
 import io.bisq.core.dao.request.compensation.CompensationRequestManager;
-import io.bisq.core.dao.vote.VotingDefaultValues;
-import io.bisq.core.dao.vote.VotingManager;
-import io.bisq.core.dao.vote.VotingService;
+import io.bisq.core.dao.vote.outdated.VotingDefaultValues;
+import io.bisq.core.dao.vote.outdated.VotingManager;
+import io.bisq.core.dao.vote.outdated.VotingService;
 import org.springframework.core.env.Environment;
 
 import static com.google.inject.name.Names.named;

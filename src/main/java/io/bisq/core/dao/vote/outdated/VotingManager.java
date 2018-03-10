@@ -15,7 +15,7 @@
  * along with Bisq. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package io.bisq.core.dao.vote;
+package io.bisq.core.dao.vote.outdated;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.inject.Inject;
@@ -78,6 +78,8 @@ public class VotingManager implements PersistedDataHost {
         this.compensationRequestManager = compensationRequestManager;
         this.daoPeriodService = daoPeriodService;
         this.votingDefaultValues = votingDefaultValues;
+
+        log.error("####");
     }
 
     @VisibleForTesting

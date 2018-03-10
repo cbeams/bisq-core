@@ -15,7 +15,7 @@
  * along with Bisq. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package io.bisq.core.dao.vote;
+package io.bisq.core.dao.vote.outdated;
 
 import org.junit.Ignore;
 import org.slf4j.Logger;
@@ -35,4 +35,4 @@ public class VotingDefaultValuesTest {
         assertEquals(100, votingDefaultValues.getAdjustedValue(100, 127));
         assertEquals(1000, votingDefaultValues.getAdjustedValue(100, 254));
     }
-} 
+}

@@ -12,7 +12,7 @@ import io.bisq.core.btc.AddressEntryList;
 import io.bisq.core.btc.wallet.BtcWalletService;
 import io.bisq.core.dao.blockchain.BsqBlockChain;
 import io.bisq.core.dao.request.compensation.CompensationRequestList;
-import io.bisq.core.dao.vote.VoteItemsList;
+import io.bisq.core.dao.vote.outdated.VoteItemsList;
 import io.bisq.core.payment.PaymentAccountList;
 import io.bisq.core.proto.CoreProtoResolver;
 import io.bisq.core.trade.TradableList;

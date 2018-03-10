@@ -15,7 +15,7 @@
  * along with Bisq. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package io.bisq.core.dao.vote;
+package io.bisq.core.dao.vote.outdated;
 
 public enum VotingType {
     MAKER_FEE_IN_BTC((byte) 0x01),

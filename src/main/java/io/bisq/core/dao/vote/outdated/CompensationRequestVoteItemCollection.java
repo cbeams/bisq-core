@@ -15,7 +15,7 @@
  * along with Bisq. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package io.bisq.core.dao.vote;
+package io.bisq.core.dao.vote.outdated;
 
 import io.bisq.common.proto.persistable.PersistablePayload;
 import lombok.EqualsAndHashCode;

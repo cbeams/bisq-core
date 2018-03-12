@@ -15,7 +15,7 @@
  * along with Bisq. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package io.bisq.core.dao.request.compensation;
+package io.bisq.core.dao.proposal;
 
 import com.google.protobuf.Message;
 import io.bisq.common.proto.persistable.PersistableEnvelope;
@@ -26,24 +26,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CompensationRequestList extends PersistableList<CompensationRequest> {
-    public CompensationRequestList(List<CompensationRequest> list) {
+public class ProposalList extends PersistableList<Proposal> {
+    public ProposalList(List<Proposal> list) {
         super(list);
     }
 
     @Override
     public Message toProtoMessage() {
         return PB.PersistableEnvelope.newBuilder()
-                .setCompensationRequestList(PB.CompensationRequestList.newBuilder()
-                        .addAllCompensationRequest(getList().stream()
-                                .map(CompensationRequest::toProtoMessage)
+                .setProposalList(PB.ProposalList.newBuilder()
+                        .addAllProposal(getList().stream()
+                                .map(Proposal::toProtoMessage)
                                 .collect(Collectors.toList())))
                 .build();
     }
 
-    public static PersistableEnvelope fromProto(PB.CompensationRequestList proto) {
-        return new CompensationRequestList(new ArrayList<>(proto.getCompensationRequestList().stream()
-                .map(CompensationRequest::fromProto)
+    public static PersistableEnvelope fromProto(PB.ProposalList proto) {
+        return new ProposalList(new ArrayList<>(proto.getProposalList().stream()
+                .map(Proposal::fromProto)
                 .collect(Collectors.toList())));
     }
 }

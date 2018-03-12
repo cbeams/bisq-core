@@ -11,8 +11,7 @@ import io.bisq.core.arbitration.DisputeList;
 import io.bisq.core.btc.AddressEntryList;
 import io.bisq.core.btc.wallet.BtcWalletService;
 import io.bisq.core.dao.blockchain.BsqBlockChain;
-import io.bisq.core.dao.request.compensation.CompensationRequestList;
-import io.bisq.core.dao.vote.outdated.VoteItemsList;
+import io.bisq.core.dao.proposal.ProposalList;
 import io.bisq.core.payment.PaymentAccountList;
 import io.bisq.core.proto.CoreProtoResolver;
 import io.bisq.core.trade.TradableList;
@@ -77,16 +76,12 @@ public class CorePersistenceProtoResolver extends CoreProtoResolver implements P
                     return NavigationPath.fromProto(proto.getNavigationPath());
                 case PAYMENT_ACCOUNT_LIST:
                     return PaymentAccountList.fromProto(proto.getPaymentAccountList(), this);
-                case COMPENSATION_REQUEST_PAYLOAD:
-                    throw new ProtobufferException("COMPENSATION_REQUEST_PAYLOAD is not used anymore");
-                case VOTE_ITEMS_LIST:
-                    return VoteItemsList.fromProto(proto.getVoteItemsList());
                 case BSQ_BLOCK_CHAIN:
                     return BsqBlockChain.fromProto(proto.getBsqBlockChain());
                 case PERSISTABLE_NETWORK_PAYLOAD_LIST:
                     return PersistableNetworkPayloadCollection.fromProto(proto.getPersistableNetworkPayloadList(), this);
-                case COMPENSATION_REQUEST_LIST:
-                    return CompensationRequestList.fromProto(proto.getCompensationRequestList());
+                case PROPOSAL_LIST:
+                    return ProposalList.fromProto(proto.getProposalList());
                 default:
                     throw new ProtobufferException("Unknown proto message case(PB.PersistableEnvelope). messageCase=" + proto.getMessageCase());
             }

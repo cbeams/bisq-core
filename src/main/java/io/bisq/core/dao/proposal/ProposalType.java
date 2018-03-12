@@ -15,17 +15,11 @@
  * along with bisq. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package io.bisq.core.dao.request.generic;
+package io.bisq.core.dao.proposal;
 
-import io.bisq.core.dao.request.VoteRequest;
-
-/**
- * Request for anything not covered by specific vote requests.
- */
-
-// TODO implement
-public class GenericRequest extends VoteRequest {
-
-    public GenericRequest() {
-    }
+public enum ProposalType {
+    COMPENSATION_REQUEST,
+    GENERIC,
+    CHANGE_PARAM,
+    REMOVE_ALTCOIN
 }

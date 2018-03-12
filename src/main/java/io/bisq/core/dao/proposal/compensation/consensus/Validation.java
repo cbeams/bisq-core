@@ -15,17 +15,12 @@
  * along with bisq. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package io.bisq.core.dao.request.compensation.consensus;
+package io.bisq.core.dao.proposal.compensation.consensus;
 
-import org.bitcoinj.core.Coin;
+/**
+ * Validation for compensation requests
+ */
+// TODO move all validation code here...
+public class Validation {
 
-public class Restrictions {
-
-    public static Coin getMinCompensationRequestAmount() {
-        return Coin.valueOf(5_000); // 50 BSQ
-    }
-
-    public static Coin getMaxCompensationRequestAmount() {
-        return Coin.valueOf(5_000_000); // 50 000 BSQ
-    }
 }

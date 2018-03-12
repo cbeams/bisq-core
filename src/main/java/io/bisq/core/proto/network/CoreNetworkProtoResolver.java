@@ -12,7 +12,7 @@ import io.bisq.core.arbitration.messages.*;
 import io.bisq.core.dao.node.messages.GetBsqBlocksRequest;
 import io.bisq.core.dao.node.messages.GetBsqBlocksResponse;
 import io.bisq.core.dao.node.messages.NewBsqBlockBroadcastMessage;
-import io.bisq.core.dao.request.compensation.CompensationRequestPayload;
+import io.bisq.core.dao.proposal.ProposalPayload;
 import io.bisq.core.filter.Filter;
 import io.bisq.core.offer.OfferPayload;
 import io.bisq.core.offer.messages.OfferAvailabilityRequest;
@@ -155,8 +155,8 @@ public class CoreNetworkProtoResolver extends CoreProtoResolver implements Netwo
                     return Mediator.fromProto(proto.getMediator());
                 case FILTER:
                     return Filter.fromProto(proto.getFilter());
-                case COMPENSATION_REQUEST_PAYLOAD:
-                    return CompensationRequestPayload.fromProto(proto.getCompensationRequestPayload());
+                case PROPOSAL_PAYLOAD:
+                    return ProposalPayload.fromProto(proto.getProposalPayload());
                 case TRADE_STATISTICS:
                     // Still used to convert TradeStatistics data from pre v0.6 versions
                     return TradeStatistics.fromProto(proto.getTradeStatistics());

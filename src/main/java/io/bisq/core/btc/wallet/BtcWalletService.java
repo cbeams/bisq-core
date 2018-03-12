@@ -227,6 +227,22 @@ public class BtcWalletService extends WalletService {
         return resultTx;
     }
 
+    //TODO Similar like completePreparedCompensationRequestTx but without second output for BSQ issuance
+    public Transaction completePreparedGenericProposalTx(Transaction preparedBurnFeeTx, byte[] opReturnData) {
+        try {
+            //TODO dummy
+            return completePreparedCompensationRequestTx(Coin.valueOf(10000), getOrCreateUnusedAddressEntry(AddressEntry.Context.AVAILABLE).getAddress(),
+                    preparedBurnFeeTx, opReturnData);
+        } catch (TransactionVerificationException e) {
+            e.printStackTrace();
+        } catch (WalletException e) {
+            e.printStackTrace();
+        } catch (InsufficientMoneyException e) {
+            e.printStackTrace();
+        }
+        throw new RuntimeException("Not implemented yet.");
+    }
+
 
     ///////////////////////////////////////////////////////////////////////////////////////////
     // Add fee input to prepared BSQ send tx
@@ -380,7 +396,7 @@ public class BtcWalletService extends WalletService {
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////
-    // Send funds to a CompensationRequest
+    // Send funds to a Proposal
     ///////////////////////////////////////////////////////////////////////////////////////////
 
     public void fundCompensationRequest(Coin amount, String btcAddress, Address squAddressForCompensationRequestFunding, FutureCallback<Transaction> callback) {
@@ -919,4 +935,5 @@ public class BtcWalletService extends WalletService {
         sendRequest.changeAddress = changeAddressAddressEntry.getAddress();
         return sendRequest;
     }
+
 }

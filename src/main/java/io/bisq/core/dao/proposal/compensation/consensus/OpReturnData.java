@@ -15,7 +15,7 @@
  * along with bisq. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package io.bisq.core.dao.request.compensation.consensus;
+package io.bisq.core.dao.proposal.compensation.consensus;
 
 import io.bisq.common.app.Version;
 import io.bisq.common.crypto.Hash;
@@ -27,7 +27,6 @@ import java.io.IOException;
 
 @Slf4j
 public class OpReturnData {
-
     public static byte[] getBytes(String input) {
         try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
             byte[] dataAndSigAsBytes = input.getBytes();

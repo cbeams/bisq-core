@@ -15,18 +15,13 @@
  * along with bisq. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package io.bisq.core.dao.request.altcoin;
-
-import io.bisq.core.dao.request.VoteRequest;
+package io.bisq.core.dao.proposal;
 
 /**
- * Request for removing an altcoin. Altcoins are added if they fulfill the formal requirements but can be requested by
- * stakeholders to get removed for any reasons (e.g. majority of stakeholder consider it a scam coin).
+ * Request for changing certain parameters used in Bisq like trading fee, default security deposit, trade limits,...
  */
 
 // TODO implement
-public class RemoveAltcoinRequest extends VoteRequest {
+public class ChangeParamProposal /*extends Proposal */ {
 
-    public RemoveAltcoinRequest() {
-    }
 }

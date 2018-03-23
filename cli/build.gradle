@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+mainClassName = 'bisq.cli.Main'
+
+dependencies {
+    compile project(':')
+    compile 'info.picocli:picocli:3.0.0-alpha-1'
+}
+
+startScripts {
+    applicationName = 'bisq'
+}
+
+/**
+ * Generate a bash completion script for the `bisq` cli.
+ * After running this task, run `source ./bash_completion`.
+ * See http://picocli.info/autocomplete.html for details.
+ * Note: You MUST be running Bash 4+ or will get errors.
+ */
+task generateBashCompletion(type: JavaExec) {
+    description = 'Generate bash completion script'
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'picocli.AutoComplete'
+    args = "-f -n bisq bisq.cli.Bisq".split().toList()
+}
+
+build.dependsOn installDist
+build.dependsOn generateBashCompletion
+installDist.destinationDir = file('build/app')
+distZip.enabled = false

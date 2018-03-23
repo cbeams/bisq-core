@@ -28,7 +28,8 @@ import picocli.CommandLine.HelpCommand;
 
     subcommands = {
         HelpCommand.class,
-        BisqBalance.class
+        BisqBalance.class,
+        BisqAccount.class
     }
 )
 public class Bisq implements Runnable {
@@ -50,3 +51,15 @@ class BisqBalance implements Runnable {
     }
 }
 
+@Command(
+    name = "account"
+)
+class BisqAccount implements Runnable {
+
+    @Override
+    public void run() {
+        System.out.println("account-A");
+        System.out.println("account-B");
+        System.out.println("account-C");
+    }
+}

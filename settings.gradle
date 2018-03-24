@@ -1,3 +1,4 @@
 rootProject.name = 'bisq-core'
 
 include 'cli'
+include 'daemon'

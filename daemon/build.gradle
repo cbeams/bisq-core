@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+mainClassName = 'bisq.daemon.Main'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'info.picocli:picocli:3.0.0-alpha-1'
+}
+
+startScripts {
+    applicationName = 'bisqd'
+}
+
+build.dependsOn installDist
+build.dependsOn generateBashCompletion
+installDist.destinationDir = file('build/app')
+distZip.enabled = false

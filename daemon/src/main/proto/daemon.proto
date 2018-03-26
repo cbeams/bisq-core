@@ -15,11 +15,40 @@
  * along with Bisq. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package bisq.cli;
+syntax = "proto3";
 
-class Main {
+option java_multiple_files = true;
+option java_package = "bisq.daemon";
+option java_outer_classname = "BisqDaemonProto";
+option objc_class_prefix = "BISQD";
 
-    public static void main(String[] args) {
-        System.out.println("bisqd");
+package bisq.daemon;
+
+// The greeting service definition.
+service Greeter {
+    // Sends a greeting
+    rpc SayHello (HelloRequest) returns (HelloReply) {
     }
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+    string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+    string message = 1;
+}
+
+service Wallet {
+    rpc GetBalance (BalanceRequest) returns (BalanceReply) {
+    }
+}
+
+message BalanceRequest {
+}
+
+message BalanceReply {
+    double value = 1;
 }

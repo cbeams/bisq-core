@@ -17,6 +17,12 @@
 
 package bisq.cli;
 
+import bisq.daemon.BalanceRequest;
+import bisq.daemon.WalletGrpc;
+
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.HelpCommand;
@@ -47,7 +53,11 @@ class BisqBalance implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("0.00000001");
+        ManagedChannel server = ManagedChannelBuilder.forAddress("localhost", 50051)
+            .usePlaintext(true)
+            .build();
+        WalletGrpc.WalletBlockingStub wallet = WalletGrpc.newBlockingStub(server);
+        System.out.println(Double.valueOf(wallet.getBalance(BalanceRequest.getDefaultInstance()).getValue()));
     }
 }
 

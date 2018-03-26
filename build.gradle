@@ -26,10 +26,12 @@ artifacts {
     archives javadocJar
 }
 
-repositories {
-    jcenter()
-    maven { url 'https://jitpack.io' }
-    maven { url 'https://raw.githubusercontent.com/JesusMcCloud/tor-binary/master/release/' }
+allprojects {
+    repositories {
+        jcenter()
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://raw.githubusercontent.com/JesusMcCloud/tor-binary/master/release/' }
+    }
 }
 
 dependencies {

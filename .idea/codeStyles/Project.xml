@@ -23,6 +23,10 @@
           <emptyLine />
           <package name="bisq.desktop" withSubpackages="true" static="false" />
           <emptyLine />
+          <package name="bisq.cli" withSubpackages="true" static="false" />
+          <emptyLine />
+          <package name="bisq.daemon" withSubpackages="true" static="false" />
+          <emptyLine />
           <package name="bisq.core" withSubpackages="true" static="false" />
           <emptyLine />
           <package name="bisq.asset" withSubpackages="true" static="false" />
@@ -32,6 +36,8 @@
           <package name="bisq.common" withSubpackages="true" static="false" />
           <emptyLine />
           <package name="io.bisq.generated" withSubpackages="true" static="false" />
+          <emptyLine />
+          <package name="io.grpc" withSubpackages="true" static="false" />
           <emptyLine />
           <package name="com.google.protobuf" withSubpackages="true" static="false" />
           <emptyLine />
@@ -64,6 +70,8 @@
           <package name="com.google.gson" withSubpackages="true" static="false" />
           <emptyLine />
           <package name="org.json.simple" withSubpackages="true" static="false" />
+          <emptyLine />
+          <package name="picocli" withSubpackages="true" static="false" />
           <emptyLine />
           <package name="joptsimple" withSubpackages="true" static="false" />
           <emptyLine />

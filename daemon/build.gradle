@@ -1,8 +1,12 @@
 plugins {
     id 'java'
+    id 'maven'
     id 'application'
     id 'com.google.protobuf' version '0.8.5'
 }
+
+group = 'network.bisq.core'
+version = '-SNAPSHOT'
 
 ext {
     protobufVersion = '3.5.1'

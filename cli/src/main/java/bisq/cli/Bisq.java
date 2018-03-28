@@ -38,7 +38,7 @@ import picocli.CommandLine.HelpCommand;
         BisqAccount.class
     }
 )
-public class Bisq implements Runnable {
+class Bisq implements Runnable {
 
     @Override
     public void run() {
